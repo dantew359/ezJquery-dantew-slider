@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="../jquery/jquery-1.12.1.min.js"></script>
+    <script>
+    $(function(){
+        $(".sl").on('click',function(){
+            $('.sl').css({borderTop:'none'})
+            $(this).css({borderTop:'2px solid red'})
+            var newsrc = $(this).attr('src');
+            console.log(newsrc);
+            $(".bg-sl").attr("src",newsrc);
+            $(".main-sl").fadeOut(
+                function(){
+                    $(".bg-sl").css({zIndex:'1'}).attr("src",newsrc);
+                    $(".main-sl").css({display:'block'}).attr("src",newsrc);
+                });
+            
+            
+            
+        })
+    })
+    </script>
+</head>
+<body>
+    
+        <div class="slider">
+            <div class="main-photo">
+            <img class="main-sl" src="images/P0vatEeNlus.jpg" alt="">
+            <img class="bg-sl" src="images/P0vatEeNlus.jpg" alt="">
+            </div>
+            <div class="mini-photos">
+                <img class="sl brd-tp"  src="images/P0vatEeNlus.jpg" alt="">
+                <img class="sl" src="images/E_zx1YpcyQU.jpg" alt="">
+                <img class="sl" src="images/hl.jpeg" alt="">
+                <img class="sl" src="images/timlil.jpg" alt="">
+                <img class="sl" src="images/rNTM0xLYESM.jpg" alt="">
+            </div>
+        </div>
+    
+</body>
+</html>
